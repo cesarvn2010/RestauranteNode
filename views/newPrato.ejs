@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header>
+        <% include ../partials/header %>
+    </header>
+    <main>
+      <h1><%= title %></h1>
+      <form action="<%= action %>" method="POST">
+        <p>Nome do Prato: <input type="text" name="nomePrato" value="<%= doc.nomePrato %>"/></p>
+        <p>Preço: <input type="number" name="preco" value="<%= doc.preco %>"/></p>
+        <input type="submit" value="Cadastrar Prato" />
+      </form>
+    </main>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  </head>
+  <body>
+    <div class="container col-md-12 col-sm-12 col-xd-6">
+      <div class="row col-md-12 col-sm-12 col-xd-6">
+        <header>
+            <% include ../partials/header %>
+        </header>
+      </div>
+    </div>
+    <div class="container">
+      <main>
+      <div class="row" id="filtro">
+        <h1><%= title %></h1>
+        <fieldset><legend>Filtros</legend>
+          <form>
+            Nome:<br><input name="nome"><br><br>
+            <button type="button" class="btn-pesquisa" type="submit">
+              <img src="/images/pesquisar.png" style="width: 20px; height: 20px"/> Pesquisar
+            </button>
+            <button type="button" class="btn-cadastro">
+              <a href="/restaurantes/newRestaurante" style="color: white;">Cadastrar novo restaurante.</a>
+            </button>
+          </form>
+        </fieldset>
+      </div><br>
+      <div class="row">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col">Nome do Restaurante</th>
+            </tr>
+          </thead>        
+          <tbody>
+              <% docs.forEach(function(restaurante){ %>
+            <tr>
+                <td><a href="/restaurantes/editRestaurante/<%= restaurante._id %>">
+                  <img src="/images/editar.png" style="width: 20px; height: 20px;"/>
+                  </a>
+                </td>
+                <td><a href="/restaurantes/deleteRestaurante/<%= restaurante._id %>">
+                  <img src="/images/excluir.png" style="width: 20px; height: 20px;"/>
+                </a></td>
+                <td><%= restaurante.nomeRestaurante %></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>    
+      </main>
+    </div>
+    <footer>
+       <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>

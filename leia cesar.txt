@@ -1,0 +1,3 @@
+Para rodar o servidor: npm start
+Para rodar o cliente mongo: C:\Program Files\MongoDB\Server\3.6\bin>mongo
+Para rodar o servidor mongod:  C:\Program Files\MongoDB\Server\3.6\bin>mongod --dbpath c:\node\workshop\data

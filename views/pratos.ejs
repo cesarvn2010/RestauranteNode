@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    
+    <header>
+        <% include ../partials/header %>
+    </header>
+    <row>
+      <container>
+        <main>
+      
+          <h1><%= title %></h1>
+          <div class="filtro">
+              <fieldset><legend>Filtros</legend>
+                <form style="padding: 10px">
+                    Nome:<br><input name="nome"><br><br>
+                    <button type="button" class="btn-pesquisa" type="submit">
+                      <img src="/images/pesquisar.png" style="width: 20px; height: 20px"/> Pesquisar
+                    </button>
+                    <button type="button" class="btn-cadastro">
+                      <a href="/pratos/newPrato" style="color: white; ">Cadastrar novo prato.</a>
+                    </button>
+                </form>
+              </fieldset>
+            </container>
+            <br>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Nome do Prato</th>
+                <th scope="col">Preço</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% docs.forEach(function(prato){ %>
+              <tr>
+                  <td><a href="/pratos/edit/<%= prato._id %>">
+                    <img src="/images/editar.png" style="width: 20px; height: 20px;"/></a>
+                  </td>
+                  <td><a href="/pratos/delete/<%= prato._id %>">
+                    <img src="/images/excluir.png" style="width: 20px; height: 20px;"/></a></td>
+                  <td><%= prato.nomePrato %></td>
+                  <td><%= prato.preco %></td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+          <hr />
+            <br>
+            
+        </main>
+      </container>
+    </row>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>

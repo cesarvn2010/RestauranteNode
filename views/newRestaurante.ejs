@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header>
+        <% include ../partials/header %>
+    </header>
+    <main>
+    <h1><%= title %></h1>
+    <form action="<%= action %>" method="POST">
+      <p>Nome do Restaurante: <input type="text" name="nomeRestaurante" value="<%= doc.nomeRestaurante %>"/></p>
+      <input type="submit" value="Cadastrar Restaurante" />
+    </form>
+    </main>
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>
