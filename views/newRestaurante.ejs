@@ -1,20 +1,28 @@
+<!-- views/newRestaurante.ejs -->
 <!DOCTYPE html>
 <html>
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <body>
-    <header>
-        <% include ../partials/header %>
-    </header>
-    <main>
-    <h1><%= title %></h1>
-    <form action="<%= action %>" method="POST">
-      <p>Nome do Restaurante: <input type="text" name="nomeRestaurante" value="<%= doc.nomeRestaurante %>"/></p>
-      <input type="submit" value="Cadastrar Restaurante" />
-    </form>
-    </main>
+  <body class="container">
+    <div class="container col-md-12 col-sm-12 col-xd-6">
+      <div class="row col-md-12 col-sm-12 col-xd-6">
+        <header>
+            <% include ../partials/header %>
+        </header>
+      </div>
+    </div>
+    <div class="container">
+      <main>
+      <div class="row" id="Cadastro">
+        <h1><%= title %></h1>
+        <form action="<%= action %>" method="POST">
+          <p>Nome do Restaurante: <input type="text" name="nomeRestaurante" value="<%= doc.nomeRestaurante %>"/></p>
+          <input type="submit" value="Cadastrar Restaurante" />
+        </form>
+      </main>
+    </div>
     <footer>
         <% include ../partials/footer %>
     </footer>

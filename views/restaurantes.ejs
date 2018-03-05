@@ -1,10 +1,11 @@
+<!-- views/restaurantes.ejs -->
+<!DOCTYPE html>
 <html>
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-
   </head>
-  <body>
+  <body class="container">
     <div class="container col-md-12 col-sm-12 col-xd-6">
       <div class="row col-md-12 col-sm-12 col-xd-6">
         <header>
@@ -17,7 +18,7 @@
       <div class="row" id="filtro">
         <h1><%= title %></h1>
         <fieldset><legend>Filtros</legend>
-          <form>
+          <form method="POST">
             Nome:<br><input name="nome"><br><br>
             <button type="button" class="btn-pesquisa" type="submit">
               <img src="/images/pesquisar.png" style="width: 20px; height: 20px"/> Pesquisar
