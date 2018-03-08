@@ -1,8 +1,8 @@
 <!-- views/pratos.ejs -->
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
-    <title><%= title %></title>
+    <title><%= pagina.title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body class="container">  
@@ -13,16 +13,17 @@
       <container>
         <main>
       
-          <h1><%= title %></h1>
+          <h1><%= pagina.title %></h1>
           <div class="filtro">
               <fieldset><legend>Filtros</legend>
                 <form style="padding: 10px">
                     Nome:<br><input name="nome"><br><br>
-                    <button type="button" class="btn-pesquisa" type="submit">
+                    <button type="button" class="btn btn-primary" type="submit">
                       <img src="/images/pesquisar.png" style="width: 20px; height: 20px"/> Pesquisar
                     </button>
-                    <button type="button" class="btn-cadastro">
-                      <a href="/pratos/newPrato" style="color: white; ">Cadastrar novo prato.</a>
+                    <button type="button" class="btn btn-secondary">
+                      <!--<a href="/pratos/newPrato" style="color: white; ">Cadastrar novo prato.</a>-->
+                      <a href="/pratos/newPrato" style="color: white; "><%= pagina.value %></a>
                     </button>
                 </form>
               </fieldset>
@@ -40,10 +41,10 @@
             <tbody>
               <% docs.forEach(function(prato){ %>
               <tr>
-                  <td><a href="/pratos/edit/<%= prato._id %>">
+                  <td><a href="/pratos/editPrato/<%= prato._id %>">
                     <img src="/images/editar.png" style="width: 20px; height: 20px;"/></a>
                   </td>
-                  <td><a href="/pratos/delete/<%= prato._id %>">
+                  <td><a href="/pratos/deletePrato/<%= prato._id %>">
                     <img src="/images/excluir.png" style="width: 20px; height: 20px;"/></a></td>
                   <td><%= prato.nomePrato %></td>
                   <td><%= prato.preco %></td>

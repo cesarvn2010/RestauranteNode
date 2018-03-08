@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title><%= pagina.title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body class="container">
@@ -16,10 +16,10 @@
     <div class="container">
       <main>
       <div class="row" id="Cadastro">
-        <h1><%= title %></h1>
+        <h1><%= pagina.title %></h1>
         <form action="<%= action %>" method="POST">
           <p>Nome do Restaurante: <input type="text" name="nomeRestaurante" value="<%= doc.nomeRestaurante %>"/></p>
-          <input type="submit" value="Cadastrar Restaurante" />
+          <input type="submit" value="<%= pagina.value %>" />
         </form>
       </main>
     </div>

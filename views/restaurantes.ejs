@@ -1,8 +1,8 @@
 <!-- views/restaurantes.ejs -->
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
-    <title><%= title %></title>
+    <title><%= pagina.title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body class="container">
@@ -16,7 +16,7 @@
     <div class="container">
       <main>
       <div class="row" id="filtro">
-        <h1><%= title %></h1>
+        <h1><%= pagina.title %></h1>
         <fieldset><legend>Filtros</legend>
           <form method="POST">
             Nome:<br><input name="nome"><br><br>
@@ -24,7 +24,7 @@
               <img src="/images/pesquisar.png" style="width: 20px; height: 20px"/> Pesquisar
             </button>
             <button type="button" class="btn-cadastro">
-              <a href="/restaurantes/newRestaurante" style="color: white;">Cadastrar novo restaurante.</a>
+              <a href="/restaurantes/newRestaurante" style="color: white;"><%= pagina.value %></a>
             </button>
           </form>
         </fieldset>

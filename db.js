@@ -32,8 +32,8 @@ function updateRestaurante(id, restaurante, callback){
     global.conn.collection("restaurantes").updateOne({_id:new ObjectId(id)}, {$set:{nomeRestaurante:restaurante.nomeRestaurante}}, callback);
 }
 
-function updatePrato(id, restaurante, callback){
-    global.conn.collection("pratos").updateOne({_id:new ObjectId(id)}, {$set:{nomeRestaurante:restaurante.nomeRestaurante}}, callback);
+function updatePrato(id, prato, callback){
+    global.conn.collection("pratos").updateOne({_id:new ObjectId(id)}, {$set:{nomePrato:prato.nomePrato, preco:prato.preco}}, callback);
 }
 
 function deleteOneRestaurante(id, callback){

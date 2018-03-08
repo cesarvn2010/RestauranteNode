@@ -1,8 +1,8 @@
 <!-- views/newPrato.ejs -->
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
-    <title><%= title %></title>
+    <title><%= pagina.title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body class="container">
@@ -10,11 +10,11 @@
         <% include ../partials/header %>
     </header>
     <main>
-      <h1><%= title %></h1>
+      <h1><%= pagina.title %></h1>
       <form action="<%= action %>" method="POST">
         <p>Nome do Prato: <input type="text" name="nomePrato" value="<%= doc.nomePrato %>"/></p>
         <p>Preço: <input type="number" name="preco" value="<%= doc.preco %>"/></p>
-        <input type="submit" value="Cadastrar Prato" />
+        <input type="submit" value="<%= pagina.value %>" />
       </form>
     </main>
     <footer>

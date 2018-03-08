@@ -5,13 +5,13 @@ var router = express.Router();
 router.get('/', function(req, res) {
   global.db.findAllRestaurantes((e, docs) => {
       if(e) { return console.log(e); }
-      res.render('restaurantes', { title: 'Restaurantes', docs: docs });
+      res.render('restaurantes', { pagina: {title: 'Restaurantes', value: 'Ir para página de cadastro'}, docs: docs });
   })
 })
 
 
 router.get('/newRestaurante', function(req, res, next) {
-res.render('newRestaurante', { title: 'Cadastro de Restaurantes', doc: { "nomeRestaurante": ""}, action: '/restaurantes/newRestaurante'});
+res.render('newRestaurante', { pagina: {title: 'Cadastro de Restaurantes', value: 'Cadastrar restaurante'}, doc: { "nomeRestaurante": ""}, action: '/restaurantes/newRestaurante'});
 });
 
 
@@ -19,7 +19,7 @@ router.get('/editRestaurante/:id', function(req, res, next) {
     var id = req.params.id;
     global.db.findOneRestaurante(id, (e, docs) => {
         if(e) { return console.log(e); }
-        res.render('newRestaurante', { title: 'Edição de Restaurante', doc: docs[0], action: '/editRestaurante/' + docs[0]._id });
+        res.render('newRestaurante', { pagina: {title: 'Edição de Restaurante', value: 'Atualizar restaurante'}, doc: docs[0], action: '/restaurantes/editRestaurante/' + docs[0]._id });
       });
 })
 
